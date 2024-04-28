@@ -20,7 +20,7 @@
         animation: moveText 5s infinite;
         position: relative;
         display: inline-block;
-        color: #ffba00; /* Yellow */
+        color: #ffba00; 
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
 
@@ -60,7 +60,7 @@
         border: 2px solid #ccc;
         padding: 20px;
         margin-bottom: 40px;
-        border-radius: 10px;
+        border-radius: 20px; 
         background-color: rgba(0, 0, 0, 0.5);
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         transition: box-shadow 0.3s ease;
@@ -75,8 +75,9 @@
     .movieTitle {
         font-size: 60px;
         margin-bottom: 20px;
-        color: #ffba00; /* Yellow */
+        color: #ffba00; 
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        font-family: 'Arial Rounded MT Bold'; 
     }
 
     .movieDetails {
@@ -109,6 +110,23 @@
     input[type="number"],
     select {
         display: none; 
+    }
+
+    #backButton {
+        position: fixed;
+        top: 20px; 
+        left: 20px; 
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 18px;
+    }
+
+    #backButton:hover {
+        background-color: #45a049;
     }
 
 </style>
@@ -154,6 +172,10 @@ function payWithCard(movieTitle, price, numberOfTickets) {
     } else {
         alert("Invalid card number. Reservation canceled.");
     }
+}
+
+function goBack() {
+    window.history.back();
 }
 </script>
 </head>
@@ -259,6 +281,16 @@ function payWithCard(movieTitle, price, numberOfTickets) {
     </div>
 </div>
 
+<button id="backButton" onclick="goBack()">Back</button>
+
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>
+
 </body>
 </html>
+
+
 
